@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class Guess
+{
+    public static void main(String[] args) 
+    {
+        // Ayşegül Yıldız
+
+        // declare varibles 
+        Scanner scan = new Scanner(System.in);
+        String firstAnswer;
+        String secondAnswer;
+
+        // ask for first answer and receive the input
+        System.out.print( " Is the object an Animal/Vegetable/Mineral? \nAnswer: ");
+        firstAnswer = scan.next();
+
+        // decide whether the first answer is valid or not
+        if ( firstAnswer.equalsIgnoreCase("animal") || firstAnswer.equalsIgnoreCase("vegetable") || firstAnswer.equalsIgnoreCase("mineral") )
+        {
+            // if the first answer is valid then ask for second answer
+            System.out.println( "Is the object bigger than a shoe box? ");
+            // receive the input
+            secondAnswer = scan.next();
+            // close the sscanner
+            scan.close();
+
+            // decide whether the second answer is valid or not
+            if ( secondAnswer.equalsIgnoreCase("yes") || secondAnswer.equalsIgnoreCase("no"))
+            {
+                // assign the answer according to first and second answers
+                if ( firstAnswer.equalsIgnoreCase( "animal" ))
+                 {
+                 if (secondAnswer.equalsIgnoreCase( "yes"))
+                 {
+                     System.out.println("You're thinking of a elephant right?");
+                 }
+                 else if (secondAnswer.equalsIgnoreCase( "no"))
+                 {
+                    System.out.println("I know, it's a squirrel!");
+                 }
+             }
+            else if ( firstAnswer.equalsIgnoreCase( "vegetable" ) )
+            {
+                 if (secondAnswer.equalsIgnoreCase( "yes"))
+                 {
+                    System.out.println( "You're thinking of a pumpkin right?" );
+                 }
+                 else 
+                 {
+                    System.out.println( "I know, it's a carrot!" );
+                 }
+            }
+            else if (  firstAnswer.equalsIgnoreCase( "vegetable" ) )
+            {
+                if (secondAnswer.equalsIgnoreCase( "yes "))
+                {
+                    System.out.println("You're thinking of a bus right?");
+                }
+                else if (secondAnswer.equalsIgnoreCase("no"))
+                {
+                   System.out.println("I know, it's a pencil");
+                }
+            }
+            }
+            else
+            {
+                System.out.printf("I don't understand, \"%s\" is not a valid answer.",secondAnswer); 
+            }
+        }
+        else 
+        {
+            System.out.printf("I don't understand, \"%s\" is not a valid answer.",firstAnswer); 
+        }
+    }   
+}
